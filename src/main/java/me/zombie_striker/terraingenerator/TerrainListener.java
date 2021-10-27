@@ -14,18 +14,16 @@ public class TerrainListener implements Listener {
 
     @EventHandler
     public void onChatEvent(ChatEvent event) {
-        if (event.getPlayername().equals("Zombie_Striker") && event.getMessage().startsWith("!gen")) {
+        if (event.getMessage().startsWith("!gen")) {
             String[] messages = event.getMessage().split(" ");
             if (messages.length < 3) {
                 if (event.getMessage().startsWith("!gen start")) {
                     start = !start;
                     JOmegga.broadcast("Setting terrain gen to " + start);
-                } else {
-                    JOmegga.broadcast("Failed to reach the requirements of 3 args.");
+                    return;
                 }
-                return;
             }
-            Main.manager.generate(Integer.parseInt(messages[1]), Integer.parseInt(messages[2]));
+            JOmegga.whisper(event.getPlayername(),"Command Usage: !gen start");
         }
     }
 
