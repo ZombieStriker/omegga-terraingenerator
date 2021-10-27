@@ -1,0 +1,37 @@
+{
+   "name":"TerrainGenerator",
+   "description":"The terrain generator",
+   "author":"Zombie_Striker",
+   "config":{
+    "seed": {
+      "description": "The seed for the island you are generating",
+      "default": 1234567,
+      "type": "number"
+    },
+    "maxchunks": {
+      "description": "The max number of chunks that can be loaded (After 1600, it reaches close to 1M blocks)",
+      "default": 1600,
+      "type": "number"
+    },
+    "tree1-percent": {
+      "description": "The chance that tree1 should appear",
+      "default": 1,
+      "type": "number"
+    },
+    "bush1-percent": {
+      "description": "The chance that bush1 should appear",
+      "default": 3,
+      "type": "number"
+    }
+   },
+   "commands":[
+      {
+         "name":"!gen",
+         "description":"Starts the terrain generator",
+         "example":"!gen start",
+         "args":[
+            
+         ]
+      }
+   ]
+}
